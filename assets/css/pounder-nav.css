@@ -1,0 +1,159 @@
+/* Reset global styles that affect the entire page */
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    display: block;
+    scroll-behavior: smooth;
+    align-items: right;
+}
+
+/* Specific styles for the header */
+.header {
+    background: rgba(15, 23, 42, 0.8); /* Keeps the header's background */
+    backdrop-filter: blur(10px);
+    width: 100%;
+    position: fixed;
+    align-items: right;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+
+/* Make sure to add background color here for the main page if needed */
+.main-content {
+    background: var(--dark); /* Keep the background for content separate from the nav */
+}
+
+/* Keep the rest of the navbar and menu styles intact */
+.navbar {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    gap: 0.5rem;
+    flex: 0.5;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: right;
+}
+
+.navbar a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--text);
+    transform: scale(1.05);
+}
+
+/* Keep the mobile side menu and toggle as needed */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-light);
+    margin: 4px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 80%;
+    background: rgba(15, 23, 42, 0.9);
+    z-index: 1001;
+    padding-top: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: left;
+}
+
+.side-menu ul li a {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.side-menu ul li a:hover {
+    color: var(--text);
+    transform: translateX(5px);
+}
+
+.close-btn {
+    background: var(--primary);
+    color: var(--text);
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    background: var(--primary-light);
+    color: var(--text-muted);
+    transform: scale(1.1);
+}
+
+@media (max-width: 1080px) {
+    .navbar {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Header Logo Size */
+.header .logo img {
+    max-height: 40px; /* Limit the maximum height of the logo */
+    max-width: 100%;   /* Make sure the width is proportional */
+    height: auto;      /* Maintain aspect ratio */
+}
