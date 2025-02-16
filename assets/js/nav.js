@@ -1,51 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu = document.getElementById('sideMenu');
-    const closeBtn = document.getElementById('closeBtn');
-    const navList = document.getElementById('navList');
-    const navbar = document.getElementById('navbar');
-    
-    menuToggle.addEventListener('click', () => {
-        sideMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
-    
-    closeBtn.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-    });
-    
-    const loadNavLinks = async () => {
-        try {
-            const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
-            if (!response.ok) throw new Error('Failed to fetch navigation');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sideMenu = document.querySelector(".side-menu");
+    const closeBtn = document.querySelector(".close-btn");
+    const body = document.body;
 
-            const links = await response.json();
-            const linkElements = links.map(link => {
-                let fixedUrl = link.url;
-                if (!fixedUrl.startsWith('http://') && !fixedUrl.startsWith('https://')) {
-                    fixedUrl = 'https://' + fixedUrl;
-                }
-                return `<li><a href="${fixedUrl}">${link.text}</a></li>`;
-            }).join('');
-            
-            navbar.innerHTML = `<ul>${linkElements}</ul>`;
-            navList.innerHTML = linkElements;
-        } catch (error) {
-            console.error('Error loading navigation:', error);
-        }
-    };
-    
-    loadNavLinks();
+    // Open side menu
+    menuToggle.addEventListener("click", function () {
+        sideMenu.classList.add("open");
+        body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+    });
 
-    let lastScrollTop = 0;
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
+    // Close side menu
+    closeBtn.addEventListener("click", function () {
+        sideMenu.classList.remove("open");
+        body.style.overflow = "auto"; // Restore scrolling
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            sideMenu.classList.remove("open");
+            body.style.overflow = "auto"; // Restore scrolling
         }
-        lastScrollTop = Math.max(scrollTop, 0);
     });
 });
