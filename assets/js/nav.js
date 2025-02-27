@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const sideMenu = document.getElementById('sideMenu');
     const closeBtn = document.getElementById('closeBtn');
+    const header = document.querySelector('.header');
 
     menuToggle.addEventListener('click', () => {
         sideMenu.classList.toggle('active');
@@ -10,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeBtn.addEventListener('click', () => {
         sideMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
     });
 
     let lastScrollTop = 0;
-    const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
