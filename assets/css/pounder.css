@@ -24,8 +24,7 @@
 
 @font-face {
     font-family: 'ASATSans';
-    src: url('https://assets.alfieterry.co.uk/assets/fonts/AsatSans-Regular.ttf') format('truetype'),
-         url('https://assets.alfieterry.co.uk/assets/fonts/AsatSans-Regular.otf') format('opentype');
+    src: url('https://assets.alfieterry.co.uk/assets/fonts/ASAT-Sans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
