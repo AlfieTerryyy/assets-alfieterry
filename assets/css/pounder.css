@@ -47,34 +47,34 @@
             background-repeat: no-repeat;
         }
         .divider-1 {
-            background-image: url('https://alfieterry.co.uk/img/sea-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/sea-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .divider-2 {
-            background-image: url('https://alfieterry.co.uk/img/grass-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/grass-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .divider-3 {
-            background-image: url('https://alfieterry.co.uk/img/river-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/river-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .divider-4 {
-            background-image: url('https://alfieterry.co.uk/img/bartswindow-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/bartswindow-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .divider-5 {
-            background-image: url('https://alfieterry.co.uk/img/cornwallsunset-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/cornwallsunset-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .space-divider-1 {
-            background-image: url('https://alfieterry.co.uk/img/space-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/space-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .space-divider-2 {
-            background-image: url('https://alfieterry.co.uk/img/space2-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/space2-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
         .space-divider-3 {
-            background-image: url('https://alfieterry.co.uk/img/space3-bg.jpg');
+            background-image: url('https://alfieterry.co.uk/img/space3-bg.webp');
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         }
