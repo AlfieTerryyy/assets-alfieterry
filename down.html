@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alfie Terry | Back Soon</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="https://assets.alfieterry.co.uk/assets/images/logo.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-blur: rgba(255, 255, 255, 0.3);
+    --bg-colour: #fdfdfd;
+    --text-colour: #1a1a1c;
+    --accent: #6495ed;
+    --shadow: rgba(0, 0, 0, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-blur: rgba(20, 20, 25, 0.4);
+      --bg-colour: #121214;
+      --text-colour: #eeeeee;
+      --accent: #7ca8ff;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: var(--bg-colour);
+    color: var(--text-colour);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .glow-a { background: var(--accent); top: -10%; left: -10%; }
+  .glow-b { background: #22d3ee; bottom: -12%; right: -8%; }
+
+  .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    background: var(--bg-blur);
+    backdrop-filter: blur(15px) saturate(170%);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(100, 149, 237, 0.18);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px var(--shadow);
+    animation: floaty 5s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+  }
+
+  .navbar img { width: 32px; display: block; }
+  .navbar span { font-weight: 600; font-size: 0.95rem; }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    background: var(--bg-blur);
+    backdrop-filter: blur(15px) saturate(170%);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--shadow);
+    border-radius: 24px;
+    padding: 56px 40px;
+    box-shadow: 0 15px 35px var(--shadow);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(100, 149, 237, 0.14);
+    color: var(--accent);
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 26px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin: 0 0 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 11px 26px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+
+  .btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  .footnote {
+    margin-top: 26px;
+    font-size: 0.82rem;
+    opacity: 0.6;
+  }
+
+  .footnote a {
+    color: var(--text-colour);
+    text-decoration: none;
+    border-bottom: 1px solid var(--shadow);
+  }
+
+  .footnote a:hover { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.9rem; }
+    .card { padding: 42px 26px; }
+    .navbar span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <nav class="navbar">
+    <img src="https://assets.alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry logo">
+    <span>Alfie Terry</span>
+  </nav>
+
+  <div class="card">
+    <span class="badge"><span class="dot"></span> Temporarily down</span>
+    <h1>Be right back.</h1>
+    <p>The site's offline for a bit while I sort out the server. Everything's still here! Just give it a little while and refresh.</p>
+    <a class="btn" href="mailto:contact@alfieterry.co.uk">Get in touch</a>
+    <div class="footnote">
+      In the meantime: <a href="https://github.com/AlfieTerryyy" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+</body>
+</html>
